@@ -373,6 +373,27 @@ transform: scale(1,1) translate(0px, 0px);
     outline: none;
 }
 
+.btn-pill {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+    padding: 8px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.grad {
+    border-color: #0093E9;
+    color: #0093E9;
+}
+
+.grad:hover {
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    color: white;
+}
+
 .disabled:hover {
     cursor:not-allowed
  }
