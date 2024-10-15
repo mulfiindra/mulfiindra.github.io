@@ -244,13 +244,21 @@ nav.shift ul li a {
     background-color: #928FFF;
 }
 
+.blue-3 {
+    background-color: #1b2db5;
+}
+
+.white {
+    background-color: white;
+}
+
 .biru {
     background-color: darkblue;
 }
 
 .biru-gr {
-    background-color: #21D4FD;
-    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+    background: rgb(0,30,252);
+    background: linear-gradient(125deg, rgba(0,30,252,0.6055672268907564) 0%, rgba(7,24,130,1) 100%, rgba(66,91,242,1) 100%);   
     color: white;
 }
 
@@ -263,6 +271,18 @@ nav.shift ul li a {
 .biru-gr3 {
     background-color: #FF3CAC;
     background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+    color: white;
+}
+
+.biru-gr4 {
+    background: rgb(56,137,241);
+    background: linear-gradient(125deg, rgba(56,137,241,0.6055672268907564) 0%, rgba(29,73,213,1) 100%, rgba(7,8,226,1) 100%);
+    color: white;
+}
+
+.ijo-gr {
+    background: rgb(0,255,59);
+    background: linear-gradient(125deg, rgba(0,255,59,0.6055672268907564) 0%, rgba(8,167,58,1) 100%, rgba(10,68,2,1) 100%);
     color: white;
 }
 
@@ -414,7 +434,7 @@ transform: scale(1,1) translate(0px, 0px);
     text-align: center;
     /* width: 130px; */
     border-radius:48%;
-    background: #928FFF;
+    background: #1b2db5;
     border: 2px solid #e5e4ec;
     color: green;
     /* letter-spacing:1px; */
@@ -436,7 +456,7 @@ transform: scale(1,1) translate(0px, 0px);
 
 .button-contact:hover {
     color:white;
-    background: #e5e4ec;
+    background: #ffffff;
 }
 
 .cv-button {
@@ -456,11 +476,28 @@ transform: scale(1,1) translate(0px, 0px);
     width: 10px;
     height: 10px;
     margin: 5px 7px;
-    background: #00008b;
+    /* background: #00008b; */
     display: block;
     -webkit-backface-visibility: visible;
     transition: all .2s ease;
     border-radius: 30px;
+}
+
+.owl-carousel .active span {
+    width:10px;
+    height:10px;
+    margin:5px 7px;
+    background: #1b2db5 !important;
+    display:block;
+    -webkit-backface-visibility:visible;
+    -webkit-transition:opacity 200ms ease;
+    -moz-transition:opacity 200ms ease;
+    -ms-transition:opacity 200ms ease;
+    -o-transition:opacity 200ms ease;
+    transition:opacity 200ms ease;
+    -webkit-border-radius:30px;
+    -moz-border-radius:30px;
+    border-radius:30px;
 }
 
 .carousel-control-next,
