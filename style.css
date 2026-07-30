@@ -395,8 +395,25 @@ section {
   padding: 5px 15px;
   display: inline-block;
   font-weight: 600;
-  margin-bottom: 10px;
+  margin-bottom: 0;
   color: #173b6c;
+}
+
+.resume .resume-item .resume-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.resume .resume-item .duration {
+  font-size: 13px;
+  background: #f1f1f1;
+  color: #555;
+  padding: 4px 12px;
+  border-radius: 4px;
+  font-weight: 500;
 }
 
 .resume .resume-item::before {
@@ -420,7 +437,7 @@ section {
   border-radius: 8px;
 }
 
-.contact .info i {
+.contact .info .mb-4>i {
   font-size: 20px;
   color: #1b2db5;
   float: left;
@@ -581,7 +598,12 @@ section {
   color: #37b3ed !important;
 }
 
-.dark-mode .contact .info i {
+.dark-mode .resume .resume-item .duration {
+  background-color: #333 !important;
+  color: #ccc !important;
+}
+
+.dark-mode .contact .info .mb-4>i {
   background-color: #1b2db5;
   color: #fff;
 }
@@ -595,8 +617,12 @@ section {
 
 .modal .carousel-control-prev,
 .modal .carousel-control-next {
-  width: 15%;
+  width: auto;
   opacity: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  z-index: 10;
 }
 
 .modal .carousel-control-prev-icon,
@@ -606,7 +632,7 @@ section {
   width: 35px;
   height: 35px;
   background-size: 50%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
 }
 
@@ -619,6 +645,71 @@ section {
 .modal .carousel-indicators {
   bottom: -35px;
   margin: 0;
+}
+
+/* Adjust Carousel Padding to Prevent Arrow Overlap */
+.modal .carousel {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.modal .carousel-control-prev {
+  left: 0;
+  width: 55px;
+}
+
+.modal .carousel-control-next {
+  right: 0;
+  width: 55px;
+}
+
+@media (max-width: 768px) {
+  .modal .carousel {
+    padding-left: 35px;
+    padding-right: 35px;
+  }
+
+  .modal .carousel-control-prev {
+    width: 35px;
+  }
+
+  .modal .carousel-control-next {
+    width: 35px;
+  }
+}
+
+/* Custom Lightbox for Modal Images */
+.modal .carousel-item img {
+  cursor: zoom-in;
+}
+
+.custom-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+}
+
+.custom-lightbox .lightbox-content {
+  max-width: 1200px;
+  width: 95%;
+  position: relative;
+  text-align: center;
+}
+
+.custom-lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  object-fit: contain;
 }
 
 .modal .carousel-indicators li {
@@ -649,4 +740,282 @@ section {
 .dark-mode .modal .carousel-control-prev-icon,
 .dark-mode .modal .carousel-control-next-icon {
   background-color: #37b3ed;
+}
+
+/* =========================================================================
+   Contact Form Styles
+   ========================================================================= */
+.contact-separator {
+  border-top: 1px solid #dee2e6;
+}
+
+.dark-mode .contact-separator {
+  border-top: 1px solid #333;
+}
+
+.dark-mode .contact-form .form-control {
+  background-color: #2a2a2a;
+  border: 1px solid #444;
+  color: #e0e0e0;
+}
+
+.dark-mode .contact-form .form-control::placeholder {
+  color: #888;
+}
+
+.dark-mode .contact-form .form-control:focus {
+  background-color: #2a2a2a;
+  border-color: #37b3ed;
+  color: #fff;
+  box-shadow: 0 0 0 0.2rem rgba(55, 179, 237, 0.25);
+}
+
+/* =========================================================================
+   Certificates Custom Styling
+   ========================================================================= */
+.certificate-card {
+  transition: all 0.3s ease;
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark-mode .certificate-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .certificate-card .text-muted {
+  color: #a8a9b4 !important;
+}
+
+/* =========================================================================
+   Profile Summary & Stat Cards
+   ========================================================================= */
+.profile-summary-card {
+  border-radius: 15px;
+}
+
+.profile-summary-card .badge {
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+}
+
+.stat-card {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.dark-mode .profile-summary-card .badge {
+  background-color: #2a2a2a;
+  border-color: #444 !important;
+  color: #ccc !important;
+}
+
+.dark-mode .profile-summary-card h3.text-primary,
+.dark-mode .stat-card h3.text-primary {
+  color: #37b3ed !important;
+}
+
+.dark-mode .contact-badges i {
+  opacity: 0.8;
+}
+
+.dark-mode .stat-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5) !important;
+}
+
+/* =========================================================================
+   Skill Cards
+   ========================================================================= */
+.skill-card {
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1) !important;
+}
+
+.skill-icon-wrap {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.skill-badge {
+  background-color: #f4f6f9;
+  color: #495057;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.skill-badge i {
+  font-size: 0.75rem;
+}
+
+/* Background utilities for icons */
+.bg-light-primary {
+  background-color: rgba(0, 123, 255, 0.1);
+}
+
+.bg-light-success {
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.bg-light-dark {
+  background-color: rgba(52, 58, 64, 0.1);
+}
+
+.bg-light-info {
+  background-color: rgba(23, 162, 184, 0.1);
+}
+
+.bg-light-warning {
+  background-color: rgba(255, 193, 7, 0.1);
+}
+
+.bg-light-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.bg-light-secondary {
+  background-color: rgba(108, 117, 125, 0.1);
+}
+
+/* Dark mode for skill cards */
+.dark-mode .skill-card {
+  background-color: #1f1f1f !important;
+  border: 1px solid #333 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4) !important;
+}
+
+.dark-mode .skill-card:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6) !important;
+}
+
+.dark-mode .skill-badge {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+
+.dark-mode .skill-badge i.text-muted {
+  color: #888 !important;
+}
+
+.dark-mode .bg-light-dark {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode .bg-light-dark.text-dark {
+  color: #fff !important;
+}
+
+/* =========================================================================
+   Owl Carousel Custom Navigation (Projects)
+   ========================================================================= */
+.fitur.owl-carousel .owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex !important;
+  justify-content: space-between;
+  pointer-events: none;
+  /* Let clicks pass through the container */
+  margin-top: -30px !important;
+  /* Offset above the dots */
+}
+
+.fitur.owl-carousel .owl-nav button {
+  pointer-events: auto;
+  /* Re-enable clicks on the buttons */
+  background-color: rgba(55, 179, 237, 0.8) !important;
+  color: #fff !important;
+  width: 45px;
+  height: 45px;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px !important;
+  margin: 0 !important;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  outline: none !important;
+}
+
+.fitur.owl-carousel .owl-nav button:focus {
+  outline: none !important;
+}
+
+.fitur.owl-carousel .owl-nav button:hover {
+  background-color: #37b3ed !important;
+  transform: scale(1.1);
+}
+
+.fitur.owl-carousel .owl-nav button.owl-prev {
+  margin-left: -40px !important;
+}
+
+.fitur.owl-carousel .owl-nav button.owl-next {
+  margin-right: -40px !important;
+}
+
+/* Dark mode for Owl Nav */
+.dark-mode .fitur.owl-carousel .owl-nav button {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+  color: #fff !important;
+}
+
+.dark-mode .fitur.owl-carousel .owl-nav button:hover {
+  background-color: #37b3ed !important;
+}
+
+/* Adjust for mobile to keep buttons inside slightly if needed */
+@media (max-width: 768px) {
+  .fitur.owl-carousel .owl-nav button.owl-prev {
+    margin-left: -5px !important;
+  }
+
+  .fitur.owl-carousel .owl-nav button.owl-next {
+    margin-right: -5px !important;
+  }
+}
+
+/* Make Owl Carousel Items Equal Height */
+.fitur.owl-carousel .owl-stage {
+  display: flex;
+}
+
+.fitur.owl-carousel .owl-item {
+  display: flex;
+}
+
+.fitur.owl-carousel .owl-item .item {
+  width: 100%;
+}
+
+/* Medium Zoom overrides to be above Bootstrap Modal */
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 1060 !important;
 }
