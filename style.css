@@ -505,7 +505,8 @@ section {
 }
 
 .lang-switch-wrapper {
-  right: 80px;
+  right: 20px;
+  bottom: 80px;
   font-size: 16px;
   font-weight: bold;
 }
@@ -546,10 +547,19 @@ section {
 
 .dark-mode .card,
 .dark-mode .contact .info,
-.dark-mode .modal-content {
+.dark-mode .modal-content,
+.dark-mode .services .icon-box {
   background-color: #1f1f1f !important;
   border: 1px solid #333 !important;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5) !important;
+}
+
+.dark-mode .services .icon {
+  background-color: #2a2a2a !important;
+}
+
+.dark-mode .services .title a {
+  color: #e0e0e0 !important;
 }
 
 .dark-mode .resume .resume-item::before {
@@ -560,11 +570,83 @@ section {
 .dark-mode .contact .info p,
 .dark-mode .contact .info a,
 .dark-mode .card-title,
-.dark-mode .modal-title {
+.dark-mode .modal-title,
+.dark-mode .resume .resume-title,
+.dark-mode .resume .resume-item h4 {
   color: #e0e0e0 !important;
+}
+
+.dark-mode .resume .resume-item h5 {
+  background-color: #2a2a2a !important;
+  color: #37b3ed !important;
 }
 
 .dark-mode .contact .info i {
   background-color: #1b2db5;
   color: #fff;
+}
+
+/* =========================================================================
+   Modal Carousel Custom Styling
+   ========================================================================= */
+.modal .carousel {
+  margin-bottom: 40px !important;
+}
+
+.modal .carousel-control-prev,
+.modal .carousel-control-next {
+  width: 15%;
+  opacity: 1;
+}
+
+.modal .carousel-control-prev-icon,
+.modal .carousel-control-next-icon {
+  background-color: #1b2db5;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  background-size: 50%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.modal .carousel-control-prev:hover .carousel-control-prev-icon,
+.modal .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #37b3ed;
+  transform: scale(1.1);
+}
+
+.modal .carousel-indicators {
+  bottom: -35px;
+  margin: 0;
+}
+
+.modal .carousel-indicators li {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #a8a9b4;
+  border: none;
+  opacity: 0.5;
+  margin: 0 5px;
+  transition: all 0.3s ease;
+}
+
+.modal .carousel-indicators .active {
+  background-color: #1b2db5;
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.dark-mode .modal .carousel-indicators li {
+  background-color: #555;
+}
+
+.dark-mode .modal .carousel-indicators .active {
+  background-color: #37b3ed;
+}
+
+.dark-mode .modal .carousel-control-prev-icon,
+.dark-mode .modal .carousel-control-next-icon {
+  background-color: #37b3ed;
 }
