@@ -47,7 +47,9 @@ const projectsData = [
       id: "Menyusun dokumen teknis API dan melakukan analisis sistem berdasarkan kebutuhan fungsional (Functional Requirements). Melakukan pengujian dan simulasi endpoint menggunakan Postman, serta membuat panduan integrasi yang terstruktur menggunakan Microsoft Office.",
       en: "Compiled technical API documents and conducted systems analysis based on functional requirements. Performed endpoint testing and simulation using Postman, and created structured integration guidelines using Microsoft Office."
     },
-    testCaseUrl: "assets/webservice-sample.pdf"
+    testCaseUrl: "assets/webservice-sample.pdf",
+    testCaseTextId: "Lihat Contoh Dokumen API",
+    testCaseTextEn: "View API Documentation Example"
   },
   // 3. Tax Web (Software Testing)
   {
@@ -77,7 +79,7 @@ const projectsData = [
   {
     id: "bandros",
     category: "web-development",
-    images: ["assets/bandros-1.png", "assets/bandros-2.png", "assets/bandros-3.png", "assets/bandros-4.png", "assets/bandros-5.png"],
+    images: ["assets/bandros-app/bandros-1.png", "assets/bandros-app/bandros-2.png", "assets/bandros-app/bandros-3.png", "assets/bandros-app/bandros-4.png", "assets/bandros-app/bandros-5.png"],
     title: {
       id: "BANDROS - Bandung Road Observation System",
       en: "BANDROS - Bandung Road Observation System"
@@ -105,7 +107,7 @@ const projectsData = [
   {
     id: "sipaud",
     category: "web-development",
-    images: ["assets/sipaud2.png", "assets/sipaud.jpeg", "assets/sipaud3.png", "assets/sipaud4.png", "assets/sipaud5.png", "assets/sipaud6.png"],
+    images: ["assets/sipaud-app/sipaud2.png", "assets/sipaud-app/sipaud.jpeg", "assets/sipaud-app/sipaud3.png", "assets/sipaud-app/sipaud4.png", "assets/sipaud-app/sipaud5.png", "assets/sipaud-app/sipaud6.png"],
     title: {
       id: "siPAUD Web Application",
       en: "siPAUD Web Application"
@@ -132,7 +134,7 @@ const projectsData = [
   {
     id: "bisaai",
     category: "web-development",
-    images: ["assets/academy.png", "assets/ss2.png", "assets/ss3.png", "assets/ss4.png", "assets/ss5.png"],
+    images: ["assets/bisaai/academy.png", "assets/bisaai/ss2.png", "assets/bisaai/ss3.png", "assets/bisaai/ss4.png", "assets/bisaai/ss5.png"],
     title: {
       id: "BISA AI Academy",
       en: "BISA AI Academy"
@@ -233,7 +235,7 @@ function renderProjects(category) {
       card.className = 'col-12 col-md-6 col-lg-4 p-3 mb-4';
       card.innerHTML = `
                 <div class="card shadow-sm border h-100">
-                    <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:${project.imageFit || 'cover'}; background-color: ${project.imageBg || 'transparent'};" alt="${project.title.id}">
+                    <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:${project.imageFit || 'contain'}; background-color: ${project.imageBg || '#ffffff'};" alt="${project.title.id}">
                     <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title font-weight-bold lang-tr" data-id="${project.title.id}" data-en="${project.title.en}">${project.title.id}</h5>
                         <p class="text-muted small mb-2 lang-tr" data-id="${project.role.id}" data-en="${project.role.en}">${project.role.id}</p>
@@ -297,13 +299,7 @@ function openProjectModal(projectId) {
     // Image
     const item = document.createElement('div');
     item.className = 'carousel-item ' + (idx === 0 ? 'active' : '');
-    
-    let imgStyle = "";
-    if (project.category === "ux-design") {
-      imgStyle = "height: 400px; object-fit: contain;";
-    }
-    
-    item.innerHTML = `<img class="d-block w-100 rounded" style="${imgStyle}" src="${img}">`;
+    item.innerHTML = `<img class="d-block w-100 rounded" style="max-height: 250px; object-fit: contain;" src="${img}">`;
     // Setup lightbox click
     item.querySelector('img').onclick = function () {
       document.getElementById('lightbox-img').src = this.src;
@@ -329,7 +325,9 @@ function openProjectModal(projectId) {
   footer.innerHTML = '';
 
   if (project.testCaseUrl) {
-    footer.innerHTML += `<a href="${project.testCaseUrl}" target="_blank" class="btn btn-info w-100 mb-2 lang-tr" data-id="Lihat Contoh" data-en="View Example">Lihat Contoh</a>`;
+    const textId = project.testCaseTextId || "Lihat Contoh Test Case";
+    const textEn = project.testCaseTextEn || "View Test Case Example";
+    footer.innerHTML += `<a href="${project.testCaseUrl}" target="_blank" class="btn btn-info w-100 mb-2 lang-tr" data-id="${textId}" data-en="${textEn}">${textId}</a>`;
   }
 
   if (project.buttons) {
