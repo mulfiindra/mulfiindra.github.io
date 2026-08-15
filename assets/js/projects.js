@@ -59,8 +59,8 @@ const projectsData = [
       en: "Regional Tax Web Application"
     },
     role: {
-      id: "Software Tester / Technical Support",
-      en: "Software Tester / Technical Support"
+      id: "Technical Support / Software Tester",
+      en: "Technical Support / Software Tester"
     },
     platform: "Web",
     tags: ["Manual Testing", "Functional Testing", "System Testing", "Integration Testing", "End-to-End Testing", "SIT/UAT", "Postman", "MySQL/PostgreSQL", "SQL"],
@@ -181,6 +181,36 @@ const projectsData = [
     buttons: [
       { textId: "Shutdown in 2021", textEn: "Shutdown in 2021", url: "#", class: "btn-danger disabled", width: "btn-block" }
     ]
+  },
+  // 8. UX Research - GalonGo
+  {
+    id: "ux-research-galongo",
+    category: "ux-design",
+    imageFit: "contain",
+    imageBg: "#ffffff",
+    images: ["assets/galongo/galon0.png", "assets/galongo/galon1.png", "assets/galongo/galon2.png", "assets/galongo/galon3.png", "assets/galongo/galon4.png", "assets/galongo/galon5.png", "assets/galongo/galon6.png"],
+    title: {
+      id: "GalonGo - Aplikasi Mobile Pemesanan Air Galon",
+      en: "GalonGo - Water Gallon Ordering Mobile Application"
+    },
+    role: {
+      id: "Project Coordinator, UX Researcher & UI Designer (Halaman Terpilih)",
+      en: "Project Coordinator, UX Researcher & UI Designer (Selected Screens)"
+    },
+    platform: "Mobile Application (Conceptual)",
+    tags: ["Figma", "Maze", "Google Forms", "User Research", "Usability Testing", "Wireframing", "Prototyping", "UX Design"],
+    projectType: {
+      id: "Proyek Akademik — UX Design (Mei - Jun 2026)",
+      en: "Academic Project - UX Design (May - Jun 2026)"
+    },
+    description: {
+      id: "Merancang prototype aplikasi mobile GalonGo untuk mempermudah proses pemesanan air galon yang sebelumnya dilakukan melalui WhatsApp atau telepon. Aplikasi dirancang dengan fitur pemesanan, repeat order, tracking pesanan, estimasi pengiriman, pembayaran QRIS, dan riwayat pesanan.",
+      en: "Designed a mobile application prototype GalonGo to simplify the process of ordering gallon water, which was previously done via WhatsApp or phone. The application is designed with features for ordering, repeat orders, order tracking, delivery estimation, QRIS payments, and order history."
+    },
+    buttons: [
+      { textId: "Lihat Hasil Usability Testing", textEn: "View Usability Testing Results", url: "https://docs.google.com/spreadsheets/d/1c3WYSsINgGnVe8GWhQDPGnQj1bO-6E1TDrDCQKypuhs/edit?usp=sharing", class: "btn-primary", width: "w-50 mr-2" },
+      { textId: "Lihat Prototype", textEn: "View Prototype", url: "https://www.figma.com/proto/qzmW41TEuVDcz5WTeUINLc/GalonGo-Project?node-id=0-1&t=UEMswiuVduLX1E3a-1", class: "btn-primary", width: "w-50 ml-2" }
+    ]
   }
 ];
 
@@ -202,8 +232,8 @@ function renderProjects(category) {
       const card = document.createElement('div');
       card.className = 'col-12 col-md-6 col-lg-4 p-3 mb-4';
       card.innerHTML = `
-                <div class="card shadow-sm border-0 h-100">
-                    <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:cover;" alt="${project.title.id}">
+                <div class="card shadow-sm border h-100">
+                    <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:${project.imageFit || 'cover'}; background-color: ${project.imageBg || 'transparent'};" alt="${project.title.id}">
                     <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title font-weight-bold lang-tr" data-id="${project.title.id}" data-en="${project.title.en}">${project.title.id}</h5>
                         <p class="text-muted small mb-2 lang-tr" data-id="${project.role.id}" data-en="${project.role.en}">${project.role.id}</p>
@@ -267,7 +297,13 @@ function openProjectModal(projectId) {
     // Image
     const item = document.createElement('div');
     item.className = 'carousel-item ' + (idx === 0 ? 'active' : '');
-    item.innerHTML = `<img class="d-block w-100 rounded" src="${img}">`;
+    
+    let imgStyle = "";
+    if (project.category === "ux-design") {
+      imgStyle = "height: 400px; object-fit: contain;";
+    }
+    
+    item.innerHTML = `<img class="d-block w-100 rounded" style="${imgStyle}" src="${img}">`;
     // Setup lightbox click
     item.querySelector('img').onclick = function () {
       document.getElementById('lightbox-img').src = this.src;
