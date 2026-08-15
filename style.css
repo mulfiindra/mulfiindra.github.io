@@ -228,7 +228,7 @@ h6 {
 
 #hero p {
   color: #fff;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
 }
@@ -238,6 +238,36 @@ h6 {
   padding-bottom: 4px;
   letter-spacing: 1px;
   border-bottom: 3px solid #1b2db5;
+}
+
+.badge-open-to-work {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 18px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  margin-bottom: 25px;
+}
+
+.status-dot-green {
+  width: 10px;
+  height: 10px;
+  background-color: #2ecc71;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+  animation: blink-green 1.5s infinite;
+}
+
+@keyframes blink-green {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
 @media (min-width: 1024px) {
