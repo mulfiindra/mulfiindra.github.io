@@ -127,7 +127,9 @@ const projectsData = [
       en: "Developed a web-based Early Childhood Education (PAUD) management system. Built a responsive UI and implemented CRUD features for teachers, students, parents, and class management."
     },
     buttons: [
-      { textId: "GitHub Repository", textEn: "GitHub Repository", url: "https://github.com/21mulfi/paud-app", class: "btn-primary", width: "btn-block" }
+      { textId: "Dokumen SRS", textEn: "SRS Document", url: "assets/sipaud-app/LAPORAN%20SRS_siPAUD.pdf", class: "btn-info" },
+      { textId: "User Guide", textEn: "User Guide", url: "assets/sipaud-app/guidebook_siPAUD.pdf", class: "btn-info" },
+      { textId: "GitHub Repository", textEn: "GitHub Repository", url: "https://github.com/21mulfi/paud-app", class: "btn-primary w-100" }
     ]
   },
   // 6. BISA AI
