@@ -129,7 +129,8 @@ const projectsData = [
     buttons: [
       { textId: "Dokumen SRS", textEn: "SRS Document", url: "assets/sipaud-app/LAPORAN%20SRS_siPAUD.pdf", class: "btn-info" },
       { textId: "User Guide", textEn: "User Guide", url: "assets/sipaud-app/guidebook_siPAUD.pdf", class: "btn-info" },
-      { textId: "GitHub Repository", textEn: "GitHub Repository", url: "https://github.com/21mulfi/paud-app", class: "btn-primary w-100" }
+      { textId: "GitHub Repository", textEn: "GitHub Repository", url: "https://github.com/21mulfi/paud-app", class: "btn-primary w-100" },
+      { textId: "Demo Website", textEn: "Demo Website", url: "https://mulfiindra.github.io/paud-app-demo/", class: "btn-primary w-100" }
     ]
   },
   // 6. BISA AI
