@@ -91,8 +91,8 @@ const projectsData = [
     platform: "Web",
     tags: ["HTML", "CSS", "JavaScript", "PHP", "Laravel", "PostgreSQL"],
     projectType: {
-      id: "Proyek Akademik (Jul 2026 - Agu 2026)",
-      en: "Academic Project (Jul 2026 - Aug 2026)"
+      id: "Proyek Akademik (Jul 2026 - Sekarang)",
+      en: "Academic Project (Jul 2026 - Present)"
     },
     description: {
       id: "Merancang dan membangun BANDROS (Bandung Road Observation System), sebuah platform Web GIS crowdsourcing infrastruktur. Mengintegrasikan pemetaan spasial untuk pelaporan warga, sistem upvote, dan logika kategorisasi kewenangan jalan otomatis untuk efisiensi tindak lanjut admin.",
