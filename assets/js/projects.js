@@ -238,7 +238,7 @@ function renderProjects(category) {
       card.className = 'col-12 col-md-6 col-lg-4 p-3 mb-4';
       card.innerHTML = `
                 <div class="card shadow-sm border h-100">
-                    <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:${project.imageFit || 'contain'}; background-color: ${project.imageBg || '#ffffff'};" alt="${project.title.id}">
+                    <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:${project.imageFit || 'contain'}; background-color: ${project.imageBg || '#ffffff'};" alt="${project.title.id}" loading="lazy">
                     <div class="card-body text-center d-flex flex-column">
                         <h5 class="card-title font-weight-bold lang-tr" data-id="${project.title.id}" data-en="${project.title.en}">${project.title.id}</h5>
                         <p class="text-muted small mb-2 lang-tr" data-id="${project.role.id}" data-en="${project.role.en}">${project.role.id}</p>
@@ -302,7 +302,7 @@ function openProjectModal(projectId) {
     // Image
     const item = document.createElement('div');
     item.className = 'carousel-item ' + (idx === 0 ? 'active' : '');
-    item.innerHTML = `<img class="d-block w-100 rounded" style="max-height: 250px; object-fit: contain;" src="${img}">`;
+    item.innerHTML = `<img class="d-block w-100 rounded" style="max-height: 250px; object-fit: contain;" src="${img}" loading="lazy">`;
     // Setup lightbox click
     item.querySelector('img').onclick = function () {
       document.getElementById('lightbox-img').src = this.src;
