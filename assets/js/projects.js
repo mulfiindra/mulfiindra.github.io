@@ -233,9 +233,10 @@ function renderProjects(category) {
   } else {
     emptyState.style.display = 'none';
 
-    filteredProjects.forEach(project => {
+    filteredProjects.forEach((project, index) => {
       const card = document.createElement('div');
-      card.className = 'col-12 col-md-6 col-lg-4 p-3 mb-4';
+      card.className = 'col-12 col-md-6 col-lg-4 p-3 mb-4 project-card-animate';
+      card.style.animationDelay = `${index * 0.1}s`;
       card.innerHTML = `
                 <div class="card shadow-sm border h-100">
                     <img src="${project.images[0]}" class="card-img-top border-bottom" style="height:200px; object-fit:${project.imageFit || 'contain'}; background-color: ${project.imageBg || '#ffffff'};" alt="${project.title.id}" loading="lazy">
