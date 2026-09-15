@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found - Mulfi Indra Gunawan</title>
+    
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-WBV9WV3');
+    </script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="assets/fontawesome/css/all.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="assets/logo.png" />
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .error-wrapper {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .error-title {
+            font-size: 8rem;
+            font-weight: 800;
+            margin-bottom: 0;
+            background: -webkit-linear-gradient(#007bff, #00c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .error-subtitle {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+        
+        /* Dark Mode Compatibility */
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        body.dark-mode .error-subtitle {
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBV9WV3" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <div class="error-wrapper container">
+        <h1 class="error-title">404</h1>
+        <h2 class="error-subtitle lang-tr" data-id="Halaman Tidak Ditemukan" data-en="Page Not Found">Halaman Tidak Ditemukan</h2>
+        <p class="text-muted mb-4 lang-tr" data-id="Maaf, halaman yang Anda tuju mungkin telah dihapus, dipindahkan, atau tidak pernah ada." data-en="Sorry, the page you are looking for might have been removed, had its name changed, or is temporarily unavailable.">Maaf, halaman yang Anda tuju mungkin telah dihapus, dipindahkan, atau tidak pernah ada.</p>
+        <a href="index.html" class="btn btn-primary rounded-pill px-4 py-2 font-weight-bold shadow-sm">
+            <i class="fas fa-home mr-2"></i> <span class="lang-tr" data-id="Kembali ke Beranda" data-en="Back to Home">Kembali ke Beranda</span>
+        </a>
+    </div>
+
+    <!-- Initialization Scripts for Theme and Language -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Theme setup
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+
+            // Language setup
+            const currentLang = localStorage.getItem('lang') || 'id';
+            document.querySelectorAll('.lang-tr').forEach(el => {
+                const text = currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-id');
+                if (text) {
+                    el.textContent = text;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
