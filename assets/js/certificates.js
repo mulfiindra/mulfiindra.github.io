@@ -1,5 +1,35 @@
 const certificatesData = [
   {
+    id: "fundamental-assist-web",
+    title: {
+      id: "Fundamental of Assistant Web Developer",
+      en: "Fundamental of Assistant Web Developer"
+    },
+    issuer: "Digital Talent Scholarship Komdigi",
+    issued: "September 2026",
+    image: [
+      "assets/certificates/fundamental-assist-web-mulfiindra-1.jpg",
+      "assets/certificates/fundamental-assist-web-mulfiindra-2.jpg"
+    ],
+    link: "assets/certificates/fundamental-assist-web-mulfiindra-1.jpg",
+    color: "#054ada"
+  },
+  {
+    id: "intermediate-assist-web",
+    title: {
+      id: "Intermediate Assistant Web Developer",
+      en: "Intermediate Assistant Web Developer"
+    },
+    issuer: "Digital Talent Scholarship Komdigi",
+    issued: "September 2026",
+    image: [
+      "assets/certificates/intermediate-assist-web-mulfiindra-1.jpg",
+      "assets/certificates/intermediate-assist-web-mulfiindra-2.jpg"
+    ],
+    link: "assets/certificates/intermediate-assist-web-mulfiindra-1.jpg",
+    color: "#054ada"
+  },
+  {
     id: "ibm-ai",
     title: {
       id: "Build an AI Agent",
@@ -85,10 +115,14 @@ function renderCertificates() {
     card.className = 'col-lg-3 col-md-4 col-sm-6 col-12 mb-4 project-card-animate';
     card.style.animationDelay = `${index * 0.1}s`;
 
+    // Check if image is array for the thumbnail
+    const thumbImg = Array.isArray(cert.image) ? cert.image[0] : cert.image;
+
+    // Safely pass the index to the onclick handler instead of the string
     card.innerHTML = `
         <div class="card cert-card h-100 shadow-sm border-0">
-          <div class="cert-img-container" style="border-top-color: ${cert.color}; cursor: zoom-in;" onclick="openLightbox('${cert.image}')">
-             <img src="${cert.image}" class="img-fluid cert-preview" alt="${cert.title.id}" loading="lazy">
+          <div class="cert-img-container" style="border-top-color: ${cert.color}; cursor: zoom-in;" onclick="openCertLightbox(${index})">
+             <img src="${thumbImg}" class="img-fluid cert-preview" alt="${cert.title.id}" loading="lazy">
           </div>
           <div class="card-body d-flex flex-column p-3">
              <h6 class="cert-title lang-tr text-dark font-weight-bold mb-1 text-truncate" title='${cert.title.id}' data-id='${cert.title.id}' data-en='${cert.title.en}'>${cert.title[currentLang] || cert.title.id}</h6>
@@ -101,11 +135,53 @@ function renderCertificates() {
   });
 }
 
-function openLightbox(imgSrc) {
-  document.getElementById('lightbox-img').src = imgSrc;
+let currentCertImages = [];
+let currentCertIndex = 0;
+
+function openCertLightbox(certIndex) {
+  const cert = certificatesData[certIndex];
+
+  if (Array.isArray(cert.image)) {
+    currentCertImages = cert.image;
+  } else {
+    currentCertImages = [cert.image];
+  }
+
+  currentCertIndex = 0;
+  updateCertLightbox();
   $('#custom-lightbox').fadeIn(200);
 }
 
+function updateCertLightbox() {
+  document.getElementById('lightbox-img').src = currentCertImages[currentCertIndex];
+
+  if (currentCertImages.length > 1) {
+    $('.lightbox-nav').show();
+  } else {
+    $('.lightbox-nav').hide();
+  }
+}
+
+// Add navigation logic to the window object so inline onclick handlers can reach them
+window.lightboxPrev = function () {
+  if (currentCertImages.length <= 1) return;
+  currentCertIndex = (currentCertIndex === 0) ? currentCertImages.length - 1 : currentCertIndex - 1;
+  updateCertLightbox();
+}
+
+window.lightboxNext = function () {
+  if (currentCertImages.length <= 1) return;
+  currentCertIndex = (currentCertIndex === currentCertImages.length - 1) ? 0 : currentCertIndex + 1;
+  updateCertLightbox();
+}
+
+// Attach event listeners to the nav buttons in DOM if they exist
 document.addEventListener('DOMContentLoaded', () => {
   renderCertificates();
+
+  const prevBtn = document.querySelector('.lightbox-prev');
+  if (prevBtn) prevBtn.addEventListener('click', window.lightboxPrev);
+
+  const nextBtn = document.querySelector('.lightbox-next');
+  if (nextBtn) nextBtn.addEventListener('click', window.lightboxNext);
 });

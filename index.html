@@ -46,6 +46,11 @@
 </head>
 
 <body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar" id="myBar"></div>
+    </div>
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WBV9WV3" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
@@ -830,8 +835,11 @@
     <!-- Custom Lightbox -->
     <div id="custom-lightbox" class="custom-lightbox" style="display: none;">
         <div class="lightbox-content">
+            <span class="lightbox-nav lightbox-prev" style="display:none;"><i class="fas fa-chevron-left"></i></span>
             <img id="lightbox-img" src="" alt="Zoomed Image">
+            <span class="lightbox-nav lightbox-next" style="display:none;"><i class="fas fa-chevron-right"></i></span>
         </div>
+        <span class="lightbox-close"><i class="fas fa-times"></i></span>
     </div>
 
     <!-- SCRIPTS -->
@@ -866,14 +874,21 @@
                 }
             });
 
+            // Custom Lightbox for Modal Images (Projects)
             $('.modal .carousel-item img').on('click', function () {
                 var src = $(this).attr('src');
                 $('#lightbox-img').attr('src', src);
+                $('.lightbox-nav').hide(); // Hide navigation for project images
                 $('#custom-lightbox').fadeIn(200);
             });
 
-            $('#custom-lightbox').on('click', function () {
-                $(this).fadeOut(200);
+            // Close Lightbox
+            $('#custom-lightbox, .lightbox-close').on('click', function (e) {
+                // If clicked on the image or the navigation arrows, don't close
+                if ($(e.target).is('#lightbox-img') || $(e.target).closest('.lightbox-nav').length) {
+                    return;
+                }
+                $('#custom-lightbox').fadeOut(200);
             });
         });
 
@@ -958,7 +973,7 @@
         const langIcon = document.getElementById('langIcon');
 
         // Check local storage for preferences
-        let currentTheme = localStorage.getItem('theme') || 'light';
+        let currentTheme = localStorage.getItem('theme') || 'dark';
         let currentLang = localStorage.getItem('lang') || 'id';
 
         function applyTheme(theme) {
@@ -1000,8 +1015,15 @@
             applyLanguage(currentLang);
         });
 
-        // Back to top button
+        // Back to top button & Scroll Progress Bar
         $(window).scroll(function () {
+            // Scroll Progress Bar Logic
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+
+            // Back to top logic
             if ($(this).scrollTop() > 100) {
                 $('.back-to-top').fadeIn('slow');
                 $('body').addClass('scrolled');

@@ -1172,3 +1172,82 @@ body.scrolled .lang-switch-wrapper {
 
 html { scroll-behavior: smooth !important; }
 
+
+/* Scroll Progress Bar */
+.scroll-progress-container {
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  width: 100%;
+  background-color: transparent;
+}
+.scroll-progress-bar {
+  height: 4px;
+  background: #007bff; /* Primary color */
+  width: 0%;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.dark-mode .scroll-progress-bar {
+  background: #00c6ff; /* Lighter blue for dark mode */
+}
+
+
+/* Lightbox Navigation */
+.custom-lightbox .lightbox-content {
+  position: relative;
+  display: inline-block;
+  max-width: 90%;
+}
+.lightbox-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+.lightbox-nav:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+.lightbox-prev { left: 30px; }
+.lightbox-next { right: 30px; }
+
+@media (max-width: 768px) {
+  .custom-lightbox .lightbox-content { max-width: 95%; }
+  .lightbox-nav {
+    width: 45px;
+    height: 45px;
+    font-size: 1.4rem;
+  }
+  .lightbox-prev { left: 10px; }
+  .lightbox-next { right: 10px; }
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1050;
+  transition: transform 0.3s ease;
+}
+.lightbox-close:hover {
+  transform: scale(1.1);
+}
+
