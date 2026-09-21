@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -78,7 +78,7 @@
             }
 
             // Language setup
-            const currentLang = localStorage.getItem('lang') || 'id';
+            const currentLang = localStorage.getItem('lang') || 'en';
             document.querySelectorAll('.lang-tr').forEach(el => {
                 const text = currentLang === 'en' ? el.getAttribute('data-en') : el.getAttribute('data-id');
                 if (text) {

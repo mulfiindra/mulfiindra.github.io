@@ -263,7 +263,7 @@ function renderProjects(category) {
   if (typeof applyLanguage === 'function' && typeof currentLang !== 'undefined') {
     applyLanguage(currentLang);
   } else {
-    const savedLang = localStorage.getItem('lang') || 'id';
+    const savedLang = localStorage.getItem('lang') || 'en';
     document.querySelectorAll('#projects-container .lang-tr').forEach(el => {
       el.innerHTML = el.getAttribute('data-' + savedLang) || el.innerHTML;
     });
@@ -344,7 +344,7 @@ function openProjectModal(projectId) {
   }
 
   // Translate modal
-  const savedLang = localStorage.getItem('lang') || 'id';
+  const savedLang = localStorage.getItem('lang') || 'en';
   document.querySelectorAll('#projectDetailModal .lang-tr').forEach(el => {
     el.innerHTML = el.getAttribute('data-' + savedLang) || el.innerHTML;
   });

@@ -39,7 +39,7 @@ const certificatesData = [
     issued: "Agustus 2026",
     image: "assets/certificates/ibm-certificates-mulfiindra.png",
     link: "assets/certificates/ibm-certificates-mulfiindra.png",
-    color: "#054ada"
+    color: "#a5aec3ff"
   },
   {
     id: "ept-toefl",
@@ -107,7 +107,7 @@ function renderCertificates() {
   const container = document.getElementById('certificates-container');
   if (!container) return;
 
-  const currentLang = localStorage.getItem('lang') || 'id';
+  const currentLang = localStorage.getItem('lang') || 'en';
   container.innerHTML = '';
 
   certificatesData.forEach((cert, index) => {

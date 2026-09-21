@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -930,14 +930,9 @@
             $(this).toggleClass('fa-bars fa-times');
         });
 
-        // Smooth scroll
+        // Smooth scroll / Instant jump handled natively by CSS
         $('.nav-menu a').on('click', function (e) {
             if (this.hash !== '') {
-                e.preventDefault();
-                var hash = this.hash;
-                $('html, body').animate({
-                    scrollTop: $(hash).offset().top
-                }, 800);
                 // Close mobile menu on click
                 if ($('body').hasClass('mobile-nav-active')) {
                     $('body').removeClass('mobile-nav-active');
@@ -974,7 +969,7 @@
 
         // Check local storage for preferences
         let currentTheme = localStorage.getItem('theme') || 'dark';
-        let currentLang = localStorage.getItem('lang') || 'id';
+        let currentLang = localStorage.getItem('lang') || 'en';
 
         function applyTheme(theme) {
             if (theme === 'dark') {
