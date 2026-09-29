@@ -1,5 +1,20 @@
 const certificatesData = [
   {
+    id: "dasar-qa-stlc-mulfiindra",
+    title: {
+      id: "Dasar-dasar Quality Assurance dan Pengujian dalam STLC",
+      en: "Foundational QA & Testing Principles"
+    },
+    issuer: "Digital Talent Scholarship Komdigi",
+    issued: "September 2026",
+    image: [
+      "assets/certificates/dasar-qa-stlc-mulfiindra-1.jpg",
+      "assets/certificates/dasar-qa-stlc-mulfiindra-2.jpg"
+    ],
+    link: "assets/certificates/dasar-qa-stlc-mulfiindra-1.jpg",
+    color: "#45009bff"
+  },
+  {
     id: "fundamental-assist-web",
     title: {
       id: "Fundamental of Assistant Web Developer",
