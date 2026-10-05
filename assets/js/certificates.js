@@ -1,5 +1,21 @@
 const certificatesData = [
   {
+    id: "ai-agent-hacktiv8-mulfiindra",
+    title: {
+      id: "IT - AI Agent for Programming",
+      en: "IT - AI Agent for Programming"
+    },
+    issuer: "Digital Talent Scholarship Komdigi",
+    issued: "September 2026",
+    image: [
+      "assets/certificates/ai-agent-hacktiv8-mulfiindra-1.jpg",
+      "assets/certificates/ai-agent-hacktiv8-mulfiindra-2.jpg",
+      "assets/certificates/ai-agent-hacktiv8-mulfiindra-3.jpg"
+    ],
+    link: "assets/certificates/ai-agent-hacktiv8-mulfiindra-1.jpg",
+    color: "#220bf1ff"
+  },
+  {
     id: "dasar-qa-stlc-mulfiindra",
     title: {
       id: "Dasar-dasar Quality Assurance dan Pengujian dalam STLC",
