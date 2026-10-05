@@ -5,7 +5,7 @@ const certificatesData = [
       id: "IT - AI Agent for Programming",
       en: "IT - AI Agent for Programming"
     },
-    issuer: "Digital Talent Scholarship Komdigi",
+    issuer: "Hacktiv8 x IBM SkillsBuild",
     issued: "September 2026",
     image: [
       "assets/certificates/ai-agent-hacktiv8-mulfiindra-1.jpg",
