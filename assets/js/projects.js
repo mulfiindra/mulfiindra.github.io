@@ -13,17 +13,18 @@ const projectsData = [
       en: "Software Tester"
     },
     platform: "Web",
-    tags: ["Automation Testing", "Selenium WebDriver", "Java"],
+    tags: ["Automation Testing", "Selenium WebDriver", "Java", "Playwright", "Typescript"],
     projectType: {
       id: "Automation Testing",
       en: "Automation Testing"
     },
     description: {
-      id: "Melakukan pengujian otomatisasi pada situs web e-commerce Saucedemo. Fokus pengujian meliputi login dan verifikasi elemen halaman menggunakan Selenium WebDriver dan Java.",
-      en: "Automation testing for Saucedemo Website. Focus areas include login and page element verification using Selenium WebDriver and Java."
+      id: "Melakukan pengujian otomatisasi pada situs web e-commerce Saucedemo. Fokus pengujian meliputi login dan verifikasi elemen halaman menggunakan beberapa tools pengujian automation.",
+      en: "Automation testing for Saucedemo Website. Focus areas include login and page element verification using several automation test tools."
     },
     buttons: [
-      { textId: "GitHub Repository (Selenium)", textEn: "GitHub Repository (Selenium)", url: "https://github.com/mulfiindra/SauceDemo-AutomatedTest-Selenium", class: "btn-primary w-100" }
+      { textId: "GitHub Repository (Selenium)", textEn: "GitHub Repository (Selenium)", url: "https://github.com/mulfiindra/SauceDemo-AutomatedTest-Selenium", class: "btn-primary w-100" },
+      { textId: "GitHub Repository (Selenium)", textEn: "GitHub Repository (Playwright)", url: "https://github.com/mulfiindra/SauceDemo-AutomatedTest-Playwright", class: "btn-primary w-100" }
     ]
   },
 
