@@ -1,5 +1,33 @@
 const projectsData = [
-  // 1. Mobile Tax (Software Testing) - PRIMARY
+  // 1. Saucedemo (Software Testing) - PRIMARY
+  {
+    id: "saucedemo",
+    category: "software-testing",
+    images: ["assets/undraw_online-shopping.png"],
+    title: {
+      id: "Saucedemo Website Automation Testing",
+      en: "Saucedemo Website Automation Testing"
+    },
+    role: {
+      id: "Software Tester",
+      en: "Software Tester"
+    },
+    platform: "Web",
+    tags: ["Automation Testing", "Selenium WebDriver", "Java"],
+    projectType: {
+      id: "Automation Testing",
+      en: "Automation Testing"
+    },
+    description: {
+      id: "Melakukan pengujian otomatisasi pada situs web e-commerce Saucedemo. Fokus pengujian meliputi login dan verifikasi elemen halaman menggunakan Selenium WebDriver dan Java.",
+      en: "Automation testing for Saucedemo Website. Focus areas include login and page element verification using Selenium WebDriver and Java."
+    },
+    buttons: [
+      { textId: "GitHub Repository (Selenium)", textEn: "GitHub Repository (Selenium)", url: "https://github.com/mulfiindra/SauceDemo-AutomatedTest-Selenium", class: "btn-primary w-100" }
+    ]
+  },
+
+  // 2. Mobile Tax (Software Testing) - PRIMARY
   {
     id: "tax-mobile",
     category: "software-testing",
@@ -24,7 +52,7 @@ const projectsData = [
     },
     testCaseUrl: "https://docs.google.com/spreadsheets/d/1RNslZzbZqwzVAgyEzpGWqtjTLoBFLGVmm9leTxj06us/edit?usp=sharing"
   },
-  // 2. API Documentation
+  // 3. API Documentation
   {
     id: "api-documentation",
     category: "software-testing",
@@ -51,7 +79,7 @@ const projectsData = [
     testCaseTextId: "Lihat Contoh Dokumen API",
     testCaseTextEn: "View API Documentation Example"
   },
-  // 3. Tax Web (Software Testing)
+  // 4. Tax Web (Software Testing)
   {
     id: "tax-web",
     category: "software-testing",
@@ -75,7 +103,7 @@ const projectsData = [
       en: "Manual testing of a regional tax web application covering functional, integration, and end-to-end validation. Focused on issue reproduction, bug documentation, database validation, and technical coordination with developers."
     }
   },
-  // 4. BANDROS (Web Development)
+  // 5. BANDROS (Web Development)
   {
     id: "bandros",
     category: "web-development",
@@ -103,7 +131,7 @@ const projectsData = [
       { textId: "Demo Website", textEn: "Demo Website", url: "https://mulfiindra.github.io/bandros-app-demo/", class: "btn-primary", width: "w-50 ml-2" }
     ]
   },
-  // 5. siPAUD
+  // 6. siPAUD
   {
     id: "sipaud",
     category: "web-development",
@@ -133,7 +161,7 @@ const projectsData = [
       { textId: "Demo Website", textEn: "Demo Website", url: "https://mulfiindra.github.io/paud-app-demo/", class: "btn-primary w-100" }
     ]
   },
-  // 6. BISA AI
+  // 7. BISA AI
   {
     id: "bisaai",
     category: "web-development",
@@ -160,7 +188,7 @@ const projectsData = [
       { textEn: "Visit Website", textId: "Kunjungi Web", url: "https://bisa.ai", class: "btn-primary", width: "btn-block" }
     ]
   },
-  // 7. Tellhealth
+  // 8. Tellhealth
   {
     id: "tellhealth",
     category: "web-development",
@@ -187,7 +215,7 @@ const projectsData = [
       { textId: "Shutdown in 2021", textEn: "Shutdown in 2021", url: "#", class: "btn-danger disabled", width: "btn-block" }
     ]
   },
-  // 8. UX Research - GalonGo
+  // 9. UX Research - GalonGo
   {
     id: "ux-research-galongo",
     category: "ux-design",
